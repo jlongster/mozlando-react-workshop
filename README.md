@@ -22,8 +22,7 @@ being the name of the source and the latter the contents.
 take properties for the first arguments and children as the rest of
 the varargs. Example: `dom.li({ className: 'item' }, 'Hello')`.
 
-## 2. Create a toolbar with a button that performs a "mock
-      navigation".
+## 2. Create a toolbar with a button that performs a "mock navigation".
 
 In the debugger, navigation the page generates all new sources. Add a
 toolbar at the top with a button that, when clicked, generates a fresh
