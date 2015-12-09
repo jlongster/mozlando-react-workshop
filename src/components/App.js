@@ -3,7 +3,6 @@ const generateSources = require('./generateSources');
 
 const dom = React.DOM;
 const Sources = React.createFactory(require('./Sources'));
-const Editor = React.createFactory(require('./Editor'));
 
 const App = React.createClass({
   getInitialState: function() {
@@ -34,15 +33,11 @@ const App = React.createClass({
           onClick: this.handleNavigation
         }, "Mock Tab Navigation")
       ),
-      dom.div(
-        { className: 'hbox' },
-        Sources({
-          sources,
-          selectedSource,
-          selectItem: this.handleItemSelected
-        }),
-        Editor({ source: selectedSource })
-      )
+      Sources({
+        sources,
+        selectedSource,
+        selectItem: this.handleItemSelected
+      })
     );
   }
 });
