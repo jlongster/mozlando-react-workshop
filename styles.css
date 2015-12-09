@@ -1,0 +1,45 @@
+
+html, body, ul {
+    margin: 0;
+}
+
+html, body, #mount {
+    height: 100%;
+}
+
+.hbox {
+    display: flex;
+}
+
+.toolbar {
+    background-color: #f0f0f0;
+    padding: 5px;
+    border-bottom: 1px solid #cccccc;
+}
+
+.sources {
+    flex: 0 200px;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 10px;
+    list-style: none;
+}
+
+.sources li {
+    padding: 5px;
+}
+
+.sources li:hover {
+    background-color: #d0d0d0;
+    cursor: pointer;
+}
+
+.sources li.selected {
+    background-color: #4c9ed9;
+}
+
+.editor {
+    flex: 1;
+    white-space: pre;
+    font-family: Monaco, Courier New;
+}
