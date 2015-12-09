@@ -3,6 +3,7 @@
   "scripts": {},
   "dependencies": {
     "react": "^0.14.3",
+    "react-addons-perf": "^0.14.3",
     "react-dom": "^0.14.3"
   },
   "devDependencies": {

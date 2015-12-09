@@ -21,7 +21,7 @@ const baz = function (actor) {
 const sourceTexts = [foo, bar, baz]
 
 function generateSources() {
-  const numSources = (Math.random() * 10 | 0) + 1;
+  const numSources = 100;
   const sources = [];
 
   for(let i = 0; i<numSources; i++) {

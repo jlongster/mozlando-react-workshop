@@ -2,6 +2,8 @@ const React = require('react');
 const dom = React.DOM;
 
 const Sources = React.createClass({
+  displayName: "Sources",
+
   render: function() {
     const { sources, selectedSource } = this.props;
 
