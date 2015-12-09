@@ -1,7 +1,7 @@
 const React = require('react');
 const generateSources = require('./generateSources');
 
-const { div, button } = React.DOM;
+const dom = React.DOM;
 const Sources = React.createFactory(require('./Sources'));
 const Editor = React.createFactory(require('./Editor'));
 
@@ -26,15 +26,15 @@ const App = React.createClass({
     const { sources, selectedSourceName } = this.state;
     const selectedSource = sources.find(source => source.name === selectedSourceName);
 
-    return div(
+    return dom.div(
       { className: 'app' },
-      div(
+      dom.div(
         { className: 'toolbar' },
-        button({
+        dom.button({
           onClick: this.handleNavigation
         }, "Mock Tab Navigation")
       ),
-      div(
+      dom.div(
         { className: 'hbox' },
         Sources({
           sources,
