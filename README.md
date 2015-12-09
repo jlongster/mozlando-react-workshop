@@ -61,11 +61,13 @@ Create an editor component that renders the text of the currently
 selected source. The structure of the DOM should look like this now
 (excluding the toolbar):
 
+```js
 dom.div(
   { className: 'hbox' },
   Sources(...),
   Editor(...)
 )
+```
 
 Tip: Render the editor with a className of `editor`.
 
