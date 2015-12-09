@@ -6,6 +6,7 @@ installing and running the app:
 
 ```
 $ npm install
+$ npm install webpack-dev-server
 $ node run.js
 ```
 
