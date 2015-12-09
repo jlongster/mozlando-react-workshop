@@ -1,29 +1,23 @@
 const React = require('react');
-const generateSources = require('./generateSources');
+const { bindActionCreators } = require('redux');
+const { connect } = require('react-redux');
+const actions = require('../actions');
 
 const dom = React.DOM;
 const Sources = React.createFactory(require('./Sources'));
 const Editor = React.createFactory(require('./Editor'));
 
 const App = React.createClass({
-  getInitialState: function() {
-    const sources = generateSources();
-    return { sources: sources,
-             selectedSourceName: sources[0].name };
-  },
-
   handleNavigation: function() {
-    const sources = generateSources();
-    this.setState({ sources: sources,
-                    selectedSourceName: sources[0].name });
+    this.props.navigate();
   },
 
   handleItemSelected: function(source) {
-    this.setState({ selectedSourceName: source.name });
+    this.props.selectSource(source);
   },
 
   render: function() {
-    const { sources, selectedSourceName } = this.state;
+    const { sources, selectedSourceName } = this.props;
     const selectedSource = sources.find(source => source.name === selectedSourceName);
 
     return dom.div(
@@ -47,4 +41,10 @@ const App = React.createClass({
   }
 });
 
-module.exports = App;
+module.exports = connect(
+  state => ({
+    sources: state.sources.sources,
+    selectedSourceName: state.sources.selectedSourceName
+  }),
+  dispatch => bindActionCreators(actions, dispatch)
+)(App);

@@ -3,7 +3,8 @@ const dom = React.DOM;
 
 const Editor = React.createClass({
   render: function() {
-    return dom.div({ className: 'editor' }, this.props.source.text);
+    return dom.div({ className: 'editor' },
+                   this.props.source ? this.props.source.text : '');
   }
 });
 
