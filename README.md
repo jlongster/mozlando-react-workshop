@@ -85,7 +85,7 @@ the full solution to all the above exercises.
 
 ## Advanced: Profile with PerfUtils
 
-*On the `react-perf` branch*
+*Solution on the `react-perf` branch*
 
 Use the React performance tools to output information about the rendering performance: https://facebook.github.io/react/docs/perf.html
 
