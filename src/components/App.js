@@ -1,48 +1,35 @@
 const React = require('react');
 const generateSources = require('./generateSources');
 
-const { div, button } = React.DOM;
+const dom = React.DOM;
 const Sources = React.createFactory(require('./Sources'));
-const Editor = React.createFactory(require('./Editor'));
 
 const App = React.createClass({
   getInitialState: function() {
     const sources = generateSources();
-    return { sources: sources,
-             selectedSourceName: sources[0].name };
+    return { sources: sources };
   },
 
   handleNavigation: function() {
     const sources = generateSources();
-    this.setState({ sources: sources,
-                    selectedSourceName: sources[0].name });
-  },
-
-  handleItemSelected: function(source) {
-    this.setState({ selectedSourceName: source.name });
+    this.setState({ sources: sources });
   },
 
   render: function() {
-    const { sources, selectedSourceName } = this.state;
-    const selectedSource = sources.find(source => source.name === selectedSourceName);
+    const { sources } = this.state;
 
-    return div(
+    // Add the ability to select a source by enhancing `Sources` with
+    // a `selectItem` event and keeping the state here.
+
+    return dom.div(
       { className: 'app' },
-      div(
+      dom.div(
         { className: 'toolbar' },
-        button({
+        dom.button({
           onClick: this.handleNavigation
         }, "Mock Tab Navigation")
       ),
-      div(
-        { className: 'hbox' },
-        Sources({
-          sources,
-          selectedSource,
-          selectItem: this.handleItemSelected
-        }),
-        Editor({ source: selectedSource })
-      )
+      Sources({ sources })
     );
   }
 });

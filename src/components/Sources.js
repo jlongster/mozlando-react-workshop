@@ -1,17 +1,14 @@
 const React = require('react');
-const { ul, li } = React.DOM;
+const dom = React.DOM;
 
 const Sources = React.createClass({
   render: function() {
-    const { sources, selectedSource } = this.props;
+    const { sources } = this.props;
 
-    return ul(
+    return dom.ul(
       { className: 'sources' },
       sources.map(source => {
-        return li({
-          className: (source === selectedSource) ? 'selected' : '',
-          onClick: () => this.props.selectItem(source)
-        }, source.name);
+        return dom.li(null, source.name);
       })
     )
   }
