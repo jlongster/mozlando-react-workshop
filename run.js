@@ -1,4 +1,5 @@
 var path = require('path');
+var express = require('express');
 var webpack = require('webpack');
 var WebpackDevServer = require('webpack-dev-server');
 
@@ -36,3 +37,9 @@ new WebpackDevServer(webpack(frontendConfig), {
     console.log('webpack dev server listening at localhost:3000');
   }
 });
+
+var app = express();
+
+app.use(express.static('.'));
+console.log('Server listening at http://localhost:4000/');
+app.listen(4000);
