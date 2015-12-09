@@ -1,7 +1,13 @@
 const React = require('react');
+const SourceShape = require('./sourceShape');
 const dom = React.DOM;
 
 const Sources = React.createClass({
+  propTypes: {
+    sources: React.PropTypes.arrayOf(SourceShape).isRequired,
+    selectedSource: SourceShape.isRequired
+  },
+
   render: function() {
     const { sources, selectedSource } = this.props;
 
