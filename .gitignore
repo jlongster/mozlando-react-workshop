@@ -1,3 +1,4 @@
 build
 node_modules
 lessons.md
+npm-debug.log
